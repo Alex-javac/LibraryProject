@@ -17,10 +17,9 @@ public class FillingDatabase {
 
     public static void fillIn() throws IOException {
         BookDao bookDao = new BookDaoImpl();
-        File validator = new File("/home/alexander/IdeaProjects/LibraryProject/src/main/java/info/library/service/validator.xsd");
         Files.walkFileTree(Paths.get("/home/alexander/IdeaProjects/LibraryProject/src/main/java/files"), new MyFileVisitor());
             paths.forEach(file -> {
-                if (ValidationChecker.validateXMLSchema(validator, file)) {
+                if (ValidationChecker.validateXMLSchema(file)) {
                     Book book = JaxbCreate.bookUnmarshalling(file);
                     try {
                         bookDao.create(book);
@@ -29,7 +28,6 @@ public class FillingDatabase {
                     }
                 }
             });
-
     }
 
     public static class MyFileVisitor extends SimpleFileVisitor<Path> {

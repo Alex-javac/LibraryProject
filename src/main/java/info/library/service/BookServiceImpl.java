@@ -1,5 +1,6 @@
 package info.library.service;
 
+import info.library.application.Application;
 import info.library.dao.BookDao;
 import info.library.dao.BookDaoImpl;
 import info.library.model.books.Book;
@@ -12,7 +13,7 @@ import java.util.Scanner;
 
 public class BookServiceImpl implements BookService {
     BookDao bookDao = new BookDaoImpl();
-    Scanner scanner = new Scanner(System.in);
+
 
     @Override
     public void fetchBookByID(int id) {
@@ -34,7 +35,7 @@ public class BookServiceImpl implements BookService {
         List<Book> books = new ArrayList<>();
         try {
             System.out.print("Введите жанр книг: ");
-            String genre = scanner.nextLine();
+            String genre = Application.scanner.nextLine();
             books.addAll(bookDao.getBooksByGenre(Genre.valueOf(genre.toUpperCase())));
         } catch (IllegalArgumentException e) {
             System.out.println("Выбирите жанр из предложеных:");
@@ -54,7 +55,7 @@ public class BookServiceImpl implements BookService {
         List<Book> books = new ArrayList<>();
         try {
             System.out.print("Введите имя Автора книг: ");
-            String title = scanner.nextLine();
+            String title = Application.scanner.nextLine();
             books.addAll(bookDao.getBooksByTitle(title));
         } catch (SQLException e) {
             e.printStackTrace();
@@ -67,7 +68,7 @@ public class BookServiceImpl implements BookService {
         List<Book> books = new ArrayList<>();
         try {
             System.out.print("Введите имя Автора книг: ");
-            String author = scanner.nextLine();
+            String author = Application.scanner.nextLine();
             books.addAll(bookDao.getBooksByAuthor(author));
         } catch (SQLException e) {
             e.printStackTrace();
@@ -105,16 +106,15 @@ public class BookServiceImpl implements BookService {
     public void update(int id) {
         try {
             Book book = bookDao.getBookByID(id);
-            Scanner scanner = new Scanner(System.in);
             if (book != null) {
                 System.out.print("Новый жанр книги: ");
-                String genre = scanner.nextLine();
+                String genre = Application.scanner.nextLine();
                 book.setGenre(Genre.valueOf(genre.toUpperCase()));
                 System.out.print("Новое название книги: ");
-                String title = scanner.nextLine();
+                String title = Application.scanner.nextLine();
                 book.setTitle(title);
                 System.out.print("Имя Автора книги: ");
-                String author = scanner.nextLine();
+                String author = Application.scanner.nextLine();
                 book.setAuthor(author);
 
                 if (bookDao.update(book)) {

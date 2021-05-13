@@ -13,12 +13,19 @@ import java.nio.file.Path;
 
 
 public class ValidationChecker {
-
-    public static boolean validateXMLSchema(File xsdPath, Path xmlPath) {
+   static SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+   static Schema schema;
+    static {
         try {
-            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = factory.newSchema(xsdPath);
-            Validator validator = schema.newValidator();
+            schema = factory.newSchema(new File("/home/alexander/IdeaProjects/LibraryProject/src/main/java/info/library/service/validator.xsd"));
+        } catch (SAXException e) {
+            e.printStackTrace();
+        }
+    }
+  static Validator validator = schema.newValidator();
+
+    public static boolean validateXMLSchema( Path xmlPath) {
+        try {
             validator.validate(new StreamSource(String.valueOf(xmlPath)));
         } catch (IOException | SAXException e) {
             System.out.println("Exception: " + e.getMessage());

@@ -9,14 +9,5 @@
             <xsd:element type="xsd:string" name="title"/>
         </xsd:sequence>
     </xsd:complexType>
-<!--    <xsd:element name="book" type="bookType"/>-->
-<!--    <xsd:complexType name="bookType">-->
-<!--        <xsd:sequence>-->
-<!--            <xsd:element type="xsd:string" name="author"/>-->
-<!--            <xsd:element type="xsd:string" name="genre"/>-->
-<!--            <xsd:element type="xsd:string" name="title"/>-->
-<!--        </xsd:sequence>-->
-<!--        <xsd:attribute type="xsd:string" name="id"/>-->
-<!--    </xsd:complexType>-->
 </xsd:schema>
 
