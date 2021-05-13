@@ -3,11 +3,11 @@ package info.library.service;
 import info.library.application.Application;
 
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 
 public class ApplicationServiceImpl implements ApplicationService {
     BookService service = new BookServiceImpl();
-
     @Override
     public void sortBooks() {
         System.out.println("Вывод книг:");
@@ -53,10 +53,11 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public void redactor() {
+        Scanner scanner = new Scanner(System.in);
         try {
             System.out.println("Ввидите id книги которую нужно отредактировать");
             System.out.print("ID : ");
-            int idRedactor = Application.scanner.nextInt();
+            int idRedactor = scanner.nextInt();
             if (isContinue()) {
                 service.update(idRedactor);
             }
@@ -69,9 +70,10 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public void deleteBook() {
+        Scanner scanner = new Scanner(System.in);
         try {
             System.out.print("Введите ID книги: ");
-            int id = Application.scanner.nextInt();
+            int id = scanner.nextInt();
             if (isContinue()) {
                 service.delete(id);
             }
@@ -84,9 +86,10 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public void getOneBook() {
+        Scanner scanner = new Scanner(System.in);
         try {
             System.out.print("Введите ID книги: ");
-            int id = Application.scanner.nextInt();
+            int id = scanner.nextInt();
             if (isContinue()) {
                 service.fetchBookByID(id);
             }

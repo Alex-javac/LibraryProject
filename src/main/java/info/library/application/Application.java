@@ -10,7 +10,6 @@ public class Application {
     public static void start(ApplicationService service) {
         boolean flag = true;
         while (flag) {
-
             System.out.println("Выберите действие:");
             System.out.println("1) Вывод книг.");
             System.out.println("2) Добавление книги.");
