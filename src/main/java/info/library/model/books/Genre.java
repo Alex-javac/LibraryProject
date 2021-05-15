@@ -3,7 +3,7 @@ package info.library.model.books;
 import javax.xml.bind.annotation.XmlEnum;
 
 
-@XmlEnum
+@XmlEnum(String.class)
 public enum Genre {
     CRIME, //Криминальная проза, детектив
     DETECTIVE, //Детектив

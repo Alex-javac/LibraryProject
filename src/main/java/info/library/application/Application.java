@@ -1,13 +1,15 @@
 package info.library.application;
 
 import info.library.service.ApplicationService;
+import info.library.service.ApplicationServiceImpl;
 import info.library.service.BookService;
 
 import java.util.*;
 
 public class Application {
     public static Scanner scanner = new Scanner(System.in);
-    public static void start(ApplicationService service) {
+    public static void start() {
+        ApplicationService service = new ApplicationServiceImpl();
         boolean flag = true;
         while (flag) {
             System.out.println("Выберите действие:");

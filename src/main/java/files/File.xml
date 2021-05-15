@@ -1,40 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:noNamespaceSchemaLocation="valid.xsd">
-    <book>
-        <author>Стиг Ларссон</author>
-        <genre>DETECTIVE</genre>
-        <id>3</id>
-        <title>Девушка с татуировкой дракона</title>
-    </book>
-    <book>
-        <author>Брэм Стокер</author>
-        <genre>HORROR</genre>
-        <id>5</id>
-        <title>ДРАКУЛА</title>
-    </book>
-    <book>
-        <author>Александр Дюма</author>
-        <genre>HISTORICAL</genre>
-        <id>4</id>
-        <title>Три мушкетера</title>
-    </book>
-    <book>
-        <author>Михаил Булгаков</author>
-        <genre>CLASSIC</genre>
-        <id>2</id>
-        <title>Мастер и Маргарита</title>
-    </book>
-    <book>
+       xsi:noNamespaceSchemaLocation="validator.xsd">
+    <list-books>
+    <book id="1">
         <author>Джон Толкин</author>
         <genre>FANTASY</genre>
-        <id>1</id>
         <title>Властелин колец</title>
     </book>
-    <book>
+    <book id="2">
+        <author>Михаил Булгаков</author>
+        <genre>CLASSIC</genre>
+        <title>Мастер и Маргарита</title>
+    </book>
+    <book id="3">
+        <author>Стиг Ларссон</author>
+        <genre>DETECTIVE</genre>
+        <title>Девушка с татуировкой дракона</title>
+    </book>
+    <book id="4">
+        <author>Александр Дюма</author>
+        <genre>HISTORICAL</genre>
+        <title>Три мушкетера</title>
+    </book>
+    <book id="5">
+        <author>Брэм Стокер</author>
+        <genre>HORROR</genre>
+        <title>ДРАКУЛА</title>
+    </book>
+    <book id="6">
         <author>Уильям Шекспир</author>
         <genre>ROMANCE</genre>
-        <id>6</id>
         <title>Ромео и Джульетта</title>
     </book>
+    </list-books>
 </books>

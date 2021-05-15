@@ -17,7 +17,7 @@ public class ValidationChecker {
    static Schema schema;
     static {
         try {
-            schema = factory.newSchema(new File("/home/alexander/IdeaProjects/LibraryProject/src/main/java/info/library/service/validator.xsd"));
+            schema = factory.newSchema(new File("/home/alexander/IdeaProjects/LibraryProject/src/main/java/files/validator.xsd"));
         } catch (SAXException e) {
             e.printStackTrace();
         }
